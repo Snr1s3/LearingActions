@@ -1,16 +1,37 @@
 name: Triggers 
 
 on: 
+    # Scheduled
+    schedule:
+      - cron: '0 4 * * *'
+
+    # When pushing
     push:
         branches:
             - main
+
+    # When pull request
     pull_request:
         branches:
             - main
+
+    # When github pages is buils
     page_build:
+
+    # When deploying a release
     release:
         types:
             - created
+
+    # When manually triggered
+    workflow_dispatch:
+        inputs:
+            logLevel:
+                description: 'Log level'
+                required: true
+                default: 'warning'
+            tags:
+                description: 'Test scenario tags'
 
 jobs:
     build:
