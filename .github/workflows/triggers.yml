@@ -28,8 +28,8 @@ on:
         inputs:
             bondia:
                 description: 'Bon dia'
-                required: true
-                default: 'warning'
+                required: false
+                default: 'Bon Dia'
             logLevel:
                 description: 'Log level'
                 required: true
