@@ -47,7 +47,8 @@ on:
             - opened
             - edited
             - closed
-
+env:
+    TEST_ENV: test_env
 jobs:
     build:
         name: Hello
@@ -64,3 +65,7 @@ jobs:
               echo "Issue action: ${{ github.event.action }}"
               echo "Issue number: ${{ github.event.issue.number }}"
               echo "Issue title: ${{ github.event.issue.title }}"
+          - name: Print env
+            run: echo "TEST ENV, $TEST_ENV \\\\\  STEP ENV, $STEP_ENV"
+            env:
+                STEP_ENV: stepenv
