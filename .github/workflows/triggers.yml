@@ -26,6 +26,10 @@ on:
     # When manually triggered
     workflow_dispatch:
         inputs:
+            bondia:
+                description: 'Bon dia'
+                required: true
+                default: 'warning'
             logLevel:
                 description: 'Log level'
                 required: true
