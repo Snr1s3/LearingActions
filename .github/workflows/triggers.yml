@@ -59,3 +59,8 @@ jobs:
             run: |
               echo "Triggered by ${{ github.event_name }}"
               echo "logLevel: ${{ github.event.client_payload.logLevel }}"
+          - name: Show issue type
+            run: |
+              echo "Issue action: ${{ github.event.action }}"
+              echo "Issue number: ${{ github.event.issue.number }}"
+              echo "Issue title: ${{ github.event.issue.title }}"
