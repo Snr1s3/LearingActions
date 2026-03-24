@@ -1,0 +1,21 @@
+name: Triggers 
+
+on: 
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+    page_build:
+    release:
+        types:
+            - created
+
+jobs:
+    build:
+        name: Hello
+        runs-on: ubuntu-latest
+        steps:
+          - name: Echo type of trigger
+            run: echo "Triggered by ${{ github.event_name }}"
