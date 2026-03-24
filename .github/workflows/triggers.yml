@@ -36,6 +36,8 @@ on:
                 default: 'warning'
             tags:
                 description: 'Test scenario tags'
+    repository_dispatch:
+        types: [run-tests]
 
 jobs:
     build:
@@ -44,3 +46,7 @@ jobs:
         steps:
           - name: Echo type of trigger
             run: echo "Triggered by ${{ github.event_name }}"
+          - name: Show dispatch payload
+            run: |
+              echo "Triggered by ${{ github.event_name }}"
+              echo "logLevel: ${{ github.event.client_payload.logLevel }}"
