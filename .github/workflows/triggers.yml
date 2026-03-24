@@ -36,8 +36,17 @@ on:
                 default: 'warning'
             tags:
                 description: 'Test scenario tags'
+
+    # Webhoocked
     repository_dispatch:
         types: [run-tests]
+
+    # When issues
+    issues:
+        types:
+            - opened
+            - edited
+            - closed
 
 jobs:
     build:
